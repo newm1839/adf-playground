@@ -1,5 +1,5 @@
 {
-	"name": "jsonExampleStaging",
+	"name": "jsonExampleSink",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage",
@@ -13,19 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "jsonExampleStaging.json",
 				"fileSystem": "adf-playground"
-			}
-		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"stringProperty": {
-					"type": "string"
-				},
-				"numberProperty": {
-					"type": "integer"
-				}
 			}
 		}
 	}

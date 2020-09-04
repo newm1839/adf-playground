@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "AzureDataLakeStorage/target"
+			"name": "AzureDataLakeStorage/adf-playground"
 		},
 		"annotations": [],
 		"type": "Parquet",
