@@ -14,7 +14,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "jsonExampleStaging.json",
-				"fileSystem": "staging"
+				"fileSystem": "adf-playground"
 			}
 		},
 		"schema": {
