@@ -1,0 +1,32 @@
+{
+	"name": "jsonExampleStaging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "AzureDataLakeStorage/staging"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "jsonExampleStaging.json",
+				"fileSystem": "staging"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"stringProperty": {
+					"type": "string"
+				},
+				"numberProperty": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
