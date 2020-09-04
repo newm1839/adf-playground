@@ -15,6 +15,17 @@
 				"type": "AzureBlobFSLocation",
 				"fileSystem": "adf-playground"
 			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"stringProperty": {
+					"type": "string"
+				},
+				"numberProperty": {
+					"type": "integer"
+				}
+			}
 		}
 	}
 }
