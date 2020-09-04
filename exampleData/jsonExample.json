@@ -1,0 +1,10 @@
+[
+    {
+        "stringProperty": "stringValue1",
+        "numberProperty": 1
+    },
+    {
+        "stringProperty": "stringValue2",
+        "numberProperty": 2
+    }
+]
