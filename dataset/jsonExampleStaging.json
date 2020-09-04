@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "AzureDataLakeStorage/adf-playground"
+			"name": "AzureDataLakeStorage/adfPlayground"
 		},
 		"annotations": [],
 		"type": "Json",
@@ -14,7 +14,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "jsonExampleStaging.json",
-				"fileSystem": "adf-playground"
+				"fileSystem": "adfPlayground"
 			}
 		},
 		"schema": {
