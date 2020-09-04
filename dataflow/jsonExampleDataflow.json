@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "jsonExampleDataflow",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -12,9 +12,17 @@
 					"name": "jsonExampleStaging"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "parquetExample",
+						"type": "DatasetReference"
+					},
+					"name": "parquetExample"
+				}
+			],
 			"transformations": [],
-			"script": "source(output(\n\t\tnumberProperty as short,\n\t\tstringProperty as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tsingleDocument: true) ~> jsonExampleStaging"
+			"script": "source(output(\n\t\tnumberProperty as short,\n\t\tstringProperty as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tsingleDocument: true) ~> jsonExampleStaging\njsonExampleStaging sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionFileNames:['parquetExample.parquet'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> parquetExample"
 		}
 	}
 }
