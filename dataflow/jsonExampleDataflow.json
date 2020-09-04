@@ -19,17 +19,10 @@
 						"type": "DatasetReference"
 					},
 					"name": "parquetExampleSink"
-				},
-				{
-					"dataset": {
-						"referenceName": "jsonExampleSink",
-						"type": "DatasetReference"
-					},
-					"name": "jsonExampleSink"
 				}
 			],
 			"transformations": [],
-			"script": "source(output(\n\t\tnumberProperty as short,\n\t\tstringProperty as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tsingleDocument: true) ~> jsonExampleStaging\njsonExampleStaging sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionFileNames:['parquetExample.parquet'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> parquetExampleSink\njsonExampleStaging sink(input(\n\t\tstringProperty as string,\n\t\tnumberProperty as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['jsonExampleSink.json'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> jsonExampleSink"
+			"script": "source(output(\n\t\tnumberProperty as short,\n\t\tstringProperty as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tsingleDocument: true) ~> jsonExampleStaging\njsonExampleStaging sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionFileNames:['parquetExample.parquet'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> parquetExampleSink"
 		}
 	}
 }
