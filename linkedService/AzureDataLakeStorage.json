@@ -1,0 +1,10 @@
+{
+	"name": "AzureDataLakeStorage",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://newm1839devdlsadf.dfs.core.windows.net"
+		}
+	}
+}
